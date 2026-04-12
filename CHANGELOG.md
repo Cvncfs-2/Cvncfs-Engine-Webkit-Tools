@@ -8,6 +8,14 @@ e este projeto segue as regras do Semantic Versioning.
 
 Observação: o início desse SITE foi feito antes da criação desse Repositório, então a v1.0.0 e a 1.0.1 são UPLOADS da versão original.
 
+## \[v1.0.5] - 12-04-2026
+
+## Consertado
+
+* Download do arquivo metadado do Polymod.
+* Reestruturação do código.
+
+
 ## \[v1.0.4] - 07-04-2026
 
 ## Adicionado
