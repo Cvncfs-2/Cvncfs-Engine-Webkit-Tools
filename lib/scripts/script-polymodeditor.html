@@ -1,12 +1,14 @@
 function baixar() {
+  // 1. Coleta os valores (Certifique-se de que os IDs batem com o HTML)
   let titulo = document.getElementById("title").value;
   let descricao = document.getElementById("description").value;
   let paginaPrincipal = document.getElementById("homepage").value;
-  let autor = document.getElementById("author").value; // Pega o nome do autor
+  let autor = document.getElementById("author").value;
   let versaoAPI = document.getElementById("apiVersion").value;
   let versaoMod = document.getElementById("modVersion").value;
   let licenca = document.getElementById("license").value;
 
+  // 2. Monta o objeto JSON
   let polymod = {
     "title": titulo,
     "description": descricao,
@@ -16,17 +18,31 @@ function baixar() {
     "license": licenca
   };
 
-  // Adiciona a homepage apenas se não estiver vazia
   if (paginaPrincipal.trim() !== "") {
     polymod.homepage = paginaPrincipal;
   }
 
-  // Geração do JSON com indentação de Tabulação
-  let jsonString = JSON.stringify(polymod, null, "\t");
-  let blob = new Blob([jsonString], { type: "application/json" });
-  let link = document.createElement("a");
+  // 3. Processo de Download Seguro
+  try {
+    let jsonString = JSON.stringify(polymod, null, "\t");
+    let blob = new Blob([jsonString], { type: "application/json" });
+    let url = URL.createObjectURL(blob);
+    
+    let link = document.createElement("a");
+    link.href = url;
+    link.download = "_polymod_meta.json";
 
-  link.href = URL.createObjectURL(blob);
-  link.download = "_polymod_meta.json";
-  link.click();
+    // Adiciona ao corpo para o browser permitir o clique
+    document.body.appendChild(link);
+    link.click();
+    
+    // Limpeza necessária
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    console.log("Download iniciado com sucesso!");
+  } catch (erro) {
+    console.error("Erro ao gerar o arquivo:", erro);
+    alert("Erro ao gerar o download. Verifique o console (F12).");
+  }
 }
