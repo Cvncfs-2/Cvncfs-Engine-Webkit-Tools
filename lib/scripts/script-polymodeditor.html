@@ -21,12 +21,10 @@ function baixar() {
     polymod.homepage = paginaPrincipal;
   }
 
-  // Geração do JSON com indentação de Tabulação
-  let jsonString = JSON.stringify(polymod, null, "\t");
-  let blob = new Blob([jsonString], { type: "application/json" });
-  let link = document.createElement("a");
+  let blob = new Blob([JSON.stringify(metadata, null, 2)], { type: "application/json" })
+  let link = document.createElement("a")
 
-  link.href = URL.createObjectURL(blob);
-  link.download = "_polymod_meta.json";
-  link.click();
+  link.href = URL.createObjectURL(blob)
+  link.download = "_polymod_meta.json"
+  link.click()
 }
