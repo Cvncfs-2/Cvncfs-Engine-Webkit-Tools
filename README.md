@@ -8,8 +8,11 @@ Esse site/app tem como objetivo ser uma Engine de [Friday Night Funkin](https://
 * Computador
 
 
+Agora, existem vários Ports, como:
+* **Scratch**
+* **Windows**
+* **Navegador**
 
-Se você tem um **NAVEGADOR**, você pode usar essa Engine. Também tem versões para Windows.
 
 Valeu por usar! 👌
 
