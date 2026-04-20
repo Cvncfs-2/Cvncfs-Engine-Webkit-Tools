@@ -8,6 +8,15 @@ e este projeto segue as regras do Semantic Versioning.
 
 Observação: o início desse SITE foi feito antes da criação desse Repositório, então a v1.0.0 e a 1.0.1 são UPLOADS da versão original.
 
+## \[v1.0.5.2] - 19-04-2026
+
+## Consertado
+
+* Reupload de todos os arquivos dentro de Lib.
+* Correções do código, como Placeholders.
+* [**Scratch Edition!**](https://scratch.mit.edu/projects/1309200468/)
+
+
 ## \[v1.0.5] - 12-04-2026
 
 ## Consertado
